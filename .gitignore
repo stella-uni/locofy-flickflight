@@ -33,3 +33,7 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# Style Dictionary generated files
+/tokens/tailwind.tokens.js
+/app/tokens-dark.css

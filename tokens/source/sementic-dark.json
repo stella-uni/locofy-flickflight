@@ -1,0 +1,276 @@
+{
+  "Core": {
+    "white": {
+      "$type": "color",
+      "$value": "{Black}"
+    },
+    "black": {
+      "$type": "color",
+      "$value": "{White}"
+    }
+  },
+  "Content": {
+    "contentPrimary": {
+      "$type": "color",
+      "$value": "{White}"
+    },
+    "contentSecondary": {
+      "$type": "color",
+      "$value": "{Zinc.400}"
+    },
+    "contentTertiary": {
+      "$type": "color",
+      "$value": "{Zinc.500}"
+    },
+    "contentInversePrimary": {
+      "$type": "color",
+      "$value": "{White}"
+    },
+    "contentInverseSecondary": {
+      "$type": "color",
+      "$value": "{Zinc.300}"
+    },
+    "contentInverseTertiary": {
+      "$type": "color",
+      "$value": "{Zinc.400}"
+    },
+    "Extensions": {
+      "contentRed": {
+        "$type": "color",
+        "$value": "{Red.400}"
+      },
+      "contentOrange": {
+        "$type": "color",
+        "$value": "{Orange.400}"
+      },
+      "contentYellow": {
+        "$type": "color",
+        "$value": "{Yellow.400}"
+      },
+      "contentAmber": {
+        "$type": "color",
+        "$value": "{Amber.400}"
+      },
+      "contentLime": {
+        "$type": "color",
+        "$value": "{Lime.400}"
+      },
+      "contentEmerald": {
+        "$type": "color",
+        "$value": "{Emerald.400}"
+      },
+      "contentGreen": {
+        "$type": "color",
+        "$value": "{Green.400}"
+      },
+      "contentTeal": {
+        "$type": "color",
+        "$value": "{Teal.400}"
+      },
+      "contentCyan": {
+        "$type": "color",
+        "$value": "{Cyan.400}"
+      },
+      "contentSky": {
+        "$type": "color",
+        "$value": "{Sky.400}"
+      },
+      "contentBlue": {
+        "$type": "color",
+        "$value": "{Blue.400}"
+      },
+      "contentIndigo": {
+        "$type": "color",
+        "$value": "{Indigo.400}"
+      },
+      "contentViolet": {
+        "$type": "color",
+        "$value": "{Violet.400}"
+      },
+      "contentPurple": {
+        "$type": "color",
+        "$value": "{Purple.400}"
+      },
+      "contentFuchsia": {
+        "$type": "color",
+        "$value": "{Fuchsia.400}"
+      },
+      "contentPink": {
+        "$type": "color",
+        "$value": "{Pink.400}"
+      },
+      "contentRose": {
+        "$type": "color",
+        "$value": "{Rose.400}"
+      },
+      "contentZinc": {
+        "$type": "color",
+        "$value": "{Zinc.400}"
+      }
+    }
+  },
+  "Border": {
+    "borderPrimary": {
+      "$type": "color",
+      "$value": "{Zinc.600}"
+    },
+    "borderSecondary": {
+      "$type": "color",
+      "$value": "{Zinc.700}"
+    },
+    "borderTertiary": {
+      "$type": "color",
+      "$value": "{Zinc.900}"
+    },
+    "borderInversePrimary": {
+      "$type": "color",
+      "$value": "{Zinc.700}"
+    },
+    "borderInverseSecondary": {
+      "$type": "color",
+      "$value": "{Zinc.800}"
+    },
+    "borderInverseTertiary": {
+      "$type": "color",
+      "$value": "{Zinc.700}"
+    },
+    "borderHoverOverlay": {
+      "$type": "color",
+      "$value": "#ffffff1a"
+    },
+    "borderInverseHoverOverlay": {
+      "$type": "color",
+      "$value": "#00000033"
+    },
+    "Extensions": {
+      "borderError": {
+        "$type": "color",
+        "$value": "{Red.500}"
+      },
+      "borderWarning": {
+        "$type": "color",
+        "$value": "{Amber.500}"
+      },
+      "borderSuccess": {
+        "$type": "color",
+        "$value": "{Green.500}"
+      },
+      "borderInfo": {
+        "$type": "color",
+        "$value": "{Blue.500}"
+      }
+    }
+  },
+  "Background": {
+    "backgroundPrimary": {
+      "$type": "color",
+      "$value": "{Zinc.900}"
+    },
+    "backgroundSecondary": {
+      "$type": "color",
+      "$value": "{Zinc.800}"
+    },
+    "backgroundTertiary": {
+      "$type": "color",
+      "$value": "{Zinc.700}"
+    },
+    "backgroundInversePrimary": {
+      "$type": "color",
+      "$value": "{Zinc.600}"
+    },
+    "backgroundInverseSecondary": {
+      "$type": "color",
+      "$value": "{Zinc.400}"
+    },
+    "backgroundInverseTertiary": {
+      "$type": "color",
+      "$value": "{Zinc.200}"
+    },
+    "backgroundHoverOverlay": {
+      "$type": "color",
+      "$value": "#ffffff0d"
+    },
+    "backgroundInverseHoverOverlay": {
+      "$type": "color",
+      "$value": "#00000008"
+    },
+    "Extensions": {
+      "backgroundZinc": {
+        "$type": "color",
+        "$value": "{Zinc.800}"
+      },
+      "backgroundRed": {
+        "$type": "color",
+        "$value": "{Red.950}"
+      },
+      "backgroundOrange": {
+        "$type": "color",
+        "$value": "{Orange.950}"
+      },
+      "backgroundYellow": {
+        "$type": "color",
+        "$value": "{Yellow.950}"
+      },
+      "backgroundAmber": {
+        "$type": "color",
+        "$value": "{Amber.950}"
+      },
+      "backgroundLime": {
+        "$type": "color",
+        "$value": "{Lime.950}"
+      },
+      "backgroundEmerald": {
+        "$type": "color",
+        "$value": "{Emerald.950}"
+      },
+      "backgroundTeal": {
+        "$type": "color",
+        "$value": "{Teal.950}"
+      },
+      "backgroundCyan": {
+        "$type": "color",
+        "$value": "{Cyan.950}"
+      },
+      "backgroundSky": {
+        "$type": "color",
+        "$value": "{Sky.950}"
+      },
+      "backgroundBlue": {
+        "$type": "color",
+        "$value": "{Blue.950}"
+      },
+      "backgroundIndigo": {
+        "$type": "color",
+        "$value": "{Indigo.950}"
+      },
+      "backgroundViolet": {
+        "$type": "color",
+        "$value": "{Violet.950}"
+      },
+      "backgroundPurple": {
+        "$type": "color",
+        "$value": "{Purple.950}"
+      },
+      "backgroundFuchsia": {
+        "$type": "color",
+        "$value": "{Fuchsia.950}"
+      },
+      "backgroundPink": {
+        "$type": "color",
+        "$value": "{Pink.950}"
+      },
+      "backgroundRose": {
+        "$type": "color",
+        "$value": "{Rose.950}"
+      },
+      "backgroundGreen": {
+        "$type": "color",
+        "$value": "{Green.950}"
+      }
+    },
+    "backgroundHover": {
+      "$type": "color",
+      "$value": "{Blue.500}"
+    }
+  }
+}
