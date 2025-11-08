@@ -1,3 +1,4 @@
+@import './tokens.css';
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/utilities.css" layer(utilities);
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700&display=swap");
@@ -13,5 +14,18 @@ body {
   *::before,
   *::after {
     border-width: 0;
+  }
+  
+  :root {
+    /* Root aliases for easier access */
+    --root-background: var(--background-background-primary);
+    --root-text: var(--content-content-primary);
+    --root-border: var(--border-border-primary);
+  }
+  
+  [data-theme="dark"] {
+    --root-background: var(--background-background-primary);
+    --root-text: var(--content-content-primary);
+    --root-border: var(--border-border-primary);
   }
 }

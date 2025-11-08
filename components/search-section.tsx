@@ -38,7 +38,7 @@ const SearchSection: NextPage<SearchSectionType> = ({ className = "" }) => {
                 <div className="overflow-hidden flex items-center">
                   <Radio
                     className="h-[38px] w-[38px] custom-padding"
-                    defaultChecked="true"
+                    defaultChecked={true}
                   />
                   <div className="relative tracking-[0.15px] leading-[150%]">
                     Return
