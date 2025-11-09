@@ -43,5 +43,8 @@
     "tokens:build": "node scripts/build-tokens.mjs",
     "tokens:watch": "node scripts/build-tokens.mjs --watch"
   },
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "engines": {
+    "node": "20.19.0"
+  }
 }
