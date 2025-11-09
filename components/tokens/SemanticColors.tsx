@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import semanticLight from '../../tokens/source/sementic-light.json';
 import semanticDark from '../../tokens/source/sementic-dark.json';
 import primitives from '../../tokens/source/primitives.json';
@@ -73,86 +73,178 @@ function flattenSemantic(
 }
 
 const SemanticColors = () => {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
-  const semantic = theme === 'light' ? semanticLight : semanticDark;
+  const lightTokens = flattenSemantic(semanticLight as SemanticTokens, [], primitives);
+  const darkTokens = flattenSemantic(semanticDark as SemanticTokens, [], primitives);
 
-  const tokens = flattenSemantic(semantic as SemanticTokens, [], primitives);
-
-  // Group by category
-  const grouped = tokens.reduce((acc, token) => {
+  // Group by category for both themes
+  const lightGrouped = lightTokens.reduce((acc, token) => {
     const category = token.path[0];
     if (!acc[category]) {
       acc[category] = [];
     }
     acc[category].push(token);
     return acc;
-  }, {} as Record<string, typeof tokens>);
+  }, {} as Record<string, typeof lightTokens>);
+
+  const darkGrouped = darkTokens.reduce((acc, token) => {
+    const category = token.path[0];
+    if (!acc[category]) {
+      acc[category] = [];
+    }
+    acc[category].push(token);
+    return acc;
+  }, {} as Record<string, typeof darkTokens>);
+
+  // Get all categories
+  const categories = Array.from(new Set([...Object.keys(lightGrouped), ...Object.keys(darkGrouped)]));
 
   return (
     <div className="space-y-8">
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-2xl font-bold">Semantic - Colors</h2>
-        <div className="flex gap-2">
-          <button
-            onClick={() => setTheme('light')}
-            className={`px-4 py-2 rounded ${
-              theme === 'light'
-                ? 'bg-background-background-primary text-content-content-primary border border-border-primary'
-                : 'bg-background-background-secondary text-content-content-secondary'
-            }`}
-          >
-            Light
-          </button>
-          <button
-            onClick={() => setTheme('dark')}
-            className={`px-4 py-2 rounded ${
-              theme === 'dark'
-                ? 'bg-background-background-primary text-content-content-primary border border-border-primary'
-                : 'bg-background-background-secondary text-content-content-secondary'
-            }`}
-          >
-            Dark
-          </button>
+        <div className="flex gap-4">
+          <div className="text-sm font-medium text-content-content-primary">Light Mode</div>
+          <div className="text-sm font-medium text-content-content-primary">Dark Mode</div>
         </div>
       </div>
 
       <div className="space-y-6">
-        {Object.entries(grouped).map(([category, categoryTokens]) => (
-          <div key={category} className="border rounded-lg p-6 bg-background-background-primary border-border-primary">
-            <h3 className="text-xl font-semibold mb-4 text-content-content-primary">
-              {category}
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {categoryTokens.map((token) => {
-                const tokenName = token.path.slice(1).join(' ');
-                const cssVarName = token.path.map((p) => p.charAt(0).toLowerCase() + p.slice(1)).join('-');
-                
-                return (
-                  <div
-                    key={tokenName}
-                    className="flex items-center gap-3 p-3 rounded border border-border-primary hover:bg-background-background-secondary transition-colors"
-                  >
-                    <div
-                      className="w-12 h-12 rounded border border-border-primary flex-shrink-0"
-                      style={{ backgroundColor: token.value }}
-                    />
-                    <div className="flex-1 min-w-0">
-                      <div className="font-medium text-content-content-primary truncate">
-                        {tokenName}
-                      </div>
-                      <div className="text-xs text-content-content-secondary font-mono truncate">
-                        {token.value}
-                      </div>
-                      <div className="text-xs text-content-content-tertiary font-mono truncate mt-1">
-                        --{cssVarName}
-                      </div>
-                    </div>
+        {categories.map((category) => {
+          const lightCategoryTokens = lightGrouped[category] || [];
+          const darkCategoryTokens = darkGrouped[category] || [];
+          
+          // Get all unique token names from both themes
+          const allTokenNames = new Set([
+            ...lightCategoryTokens.map(t => t.path.slice(1).join(' ')),
+            ...darkCategoryTokens.map(t => t.path.slice(1).join(' '))
+          ]);
+
+          return (
+            <div key={category} className="border rounded-lg p-6 bg-background-background-primary border-border-primary">
+              <h3 className="text-xl font-semibold mb-4 text-content-content-primary">
+                {category}
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Light Mode Column */}
+                <div>
+                  <div className="text-sm font-semibold text-content-content-primary mb-3 pb-2 border-b border-border-primary">
+                    Light Mode
                   </div>
-                );
-              })}
+                  <div className="space-y-3">
+                    {Array.from(allTokenNames).map((tokenName) => {
+                      const lightToken = lightCategoryTokens.find(
+                        t => t.path.slice(1).join(' ') === tokenName
+                      );
+                      
+                      if (!lightToken) return null;
+                      
+                      const cssVarName = lightToken.path.map((p) => p.charAt(0).toLowerCase() + p.slice(1)).join('-');
+                      
+                      return (
+                        <div
+                          key={`light-${tokenName}`}
+                          className="flex items-center gap-3 p-3 rounded border border-border-primary hover:bg-background-background-secondary transition-colors"
+                        >
+                          <div
+                            className="w-12 h-12 rounded-full border-2 border-border-primary flex-shrink-0"
+                            style={{ backgroundColor: lightToken.value }}
+                          />
+                          <div className="flex-1 min-w-0">
+                            <div className="font-medium text-content-content-primary truncate">
+                              {tokenName}
+                            </div>
+                            <div className="text-xs text-content-content-secondary font-mono truncate">
+                              {lightToken.value}
+                            </div>
+                            <div className="text-xs text-content-content-tertiary font-mono truncate mt-1">
+                              --{cssVarName}
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Dark Mode Column */}
+                <div 
+                  data-theme="dark" 
+                  className="rounded-lg p-4"
+                  style={{ 
+                    backgroundColor: '#18181b',
+                    color: '#ffffff'
+                  }}
+                >
+                  <div 
+                    className="text-sm font-semibold mb-3 pb-2 border-b"
+                    style={{ 
+                      color: '#ffffff',
+                      borderColor: '#52525b'
+                    }}
+                  >
+                    Dark Mode
+                  </div>
+                  <div className="space-y-3">
+                    {Array.from(allTokenNames).map((tokenName) => {
+                      const darkToken = darkCategoryTokens.find(
+                        t => t.path.slice(1).join(' ') === tokenName
+                      );
+                      
+                      if (!darkToken) return null;
+                      
+                      const cssVarName = darkToken.path.map((p) => p.charAt(0).toLowerCase() + p.slice(1)).join('-');
+                      
+                      return (
+                        <div
+                          key={`dark-${tokenName}`}
+                          className="flex items-center gap-3 p-3 rounded border transition-colors"
+                          style={{
+                            borderColor: '#52525b',
+                            backgroundColor: 'transparent'
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.backgroundColor = '#27272a';
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.backgroundColor = 'transparent';
+                          }}
+                        >
+                          <div
+                            className="w-12 h-12 rounded-full border-2 flex-shrink-0"
+                            style={{ 
+                              backgroundColor: darkToken.value,
+                              borderColor: '#52525b'
+                            }}
+                          />
+                          <div className="flex-1 min-w-0">
+                            <div 
+                              className="font-medium truncate"
+                              style={{ color: '#ffffff' }}
+                            >
+                              {tokenName}
+                            </div>
+                            <div 
+                              className="text-xs font-mono truncate"
+                              style={{ color: '#a1a1aa' }}
+                            >
+                              {darkToken.value}
+                            </div>
+                            <div 
+                              className="text-xs font-mono truncate mt-1"
+                              style={{ color: '#71717a' }}
+                            >
+                              --{cssVarName}
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
