@@ -310,7 +310,8 @@ export const Button = React.forwardRef<
         disabled={isDisabled}
         className={cn(
           'flex items-center justify-center transition-colors',
-          iconOnly ? '!p-0 font-medium' : 'font-semibold',
+          'font-medium',
+          iconOnly ? '!p-0' : '',
           paddingClass,
           fontSizeClass,
           lineHeightClass,
@@ -337,6 +338,8 @@ export const Button = React.forwardRef<
                 padding: '0 !important',
               }
             : {}),
+          fontFamily: 'Inter, sans-serif',
+          letterSpacing: '0%',
           borderRadius: size === 'xs' || size === 'sm' ? '6px' : '8px',
           border:
             variant === 'plain'

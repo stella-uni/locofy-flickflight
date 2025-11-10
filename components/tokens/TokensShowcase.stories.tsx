@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import PrimitivesColors from './PrimitivesColors';
 import SemanticColors from './SemanticColors';
 import Dimensions from './Dimensions';
+import Typography from './Typography';
 
 const meta = {
   title: 'Design Tokens',
@@ -39,12 +40,21 @@ export const DimensionsShowcase: Story = {
   ),
 };
 
+export const TypographyShowcase: Story = {
+  render: () => (
+    <div className="p-8 bg-background-background-primary min-h-screen">
+      <Typography />
+    </div>
+  ),
+};
+
 export const AllTokens: Story = {
   render: () => (
     <div className="p-8 bg-background-background-primary min-h-screen space-y-12">
       <PrimitivesColors />
       <SemanticColors />
       <Dimensions />
+      <Typography />
     </div>
   ),
 };

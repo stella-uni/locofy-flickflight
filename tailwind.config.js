@@ -19,6 +19,9 @@ module.exports = {
         // Use: bg-background-primary, text-content-primary, border-border-primary, etc.
         ...semanticTokens.colors,
       },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+      },
       // Border radius and spacing use Tailwind defaults (same as dimensions.json)
       // No need to override as they match Tailwind's default values
     },
