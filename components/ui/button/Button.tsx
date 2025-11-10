@@ -315,15 +315,6 @@ export const Button = React.forwardRef<
           paddingClass,
           fontSizeClass,
           lineHeightClass,
-          // Ant Design 기본 스타일 오버라이드
-          '[&:not(:disabled)]:active:!shadow-none',
-          '[&:not(:disabled)]:focus:!shadow-none',
-          '[&:not(:disabled)]:focus-visible:!shadow-none',
-          '[&:disabled]:!shadow-none',
-          '[&:not(:disabled)]:!text-inherit',
-          '[&:not(:disabled)]:hover:!text-inherit',
-          '[&:not(:disabled)]:active:!text-inherit',
-          '[&:not(:disabled)]:focus:!text-inherit',
           borderRadiusClass,
           stateClasses,
           className
@@ -335,7 +326,7 @@ export const Button = React.forwardRef<
                 height: dimensions.height,
                 minWidth: dimensions.width,
                 minHeight: dimensions.height,
-                padding: '0 !important',
+                padding: '0',
               }
             : {}),
           fontFamily: 'Inter, sans-serif',
@@ -343,42 +334,42 @@ export const Button = React.forwardRef<
           borderRadius: size === 'xs' || size === 'sm' ? '6px' : '8px',
           border:
             variant === 'plain'
-              ? 'none !important'
+              ? 'none'
               : variant === 'outline'
-                ? '1px solid var(--border-border-primary) !important'
-                : '1px solid var(--border-border-inverse-primary) !important',
+                ? '1px solid var(--border-border-primary)'
+                : '1px solid var(--border-border-inverse-primary)',
           backgroundColor:
             variant === 'plain'
               ? iconOnly
-                ? 'var(--background-background-primary) !important'
+                ? 'var(--background-background-primary)'
                 : state === 'default' || state === 'disabled' || isDisabled
-                  ? 'transparent !important'
+                  ? 'transparent'
                   : state === 'hover' || state === 'focus'
-                    ? 'var(--background-background-primary) !important'
-                    : 'transparent !important'
+                    ? 'var(--background-background-primary)'
+                    : 'transparent'
               : variant === 'outline'
-                ? 'var(--background-background-primary) !important'
-                : 'var(--background-background-inverse-primary) !important',
+                ? 'var(--background-background-primary)'
+                : 'var(--background-background-inverse-primary)',
           borderColor:
             variant === 'plain'
-              ? 'transparent !important'
+              ? 'transparent'
               : variant === 'outline'
-                ? 'var(--border-border-primary) !important'
-                : 'var(--border-border-inverse-primary) !important',
+                ? 'var(--border-border-primary)'
+                : 'var(--border-border-inverse-primary)',
           color: isDisabled
             ? variant === 'outline' || variant === 'plain'
-              ? 'var(--content-content-secondary) !important'
-              : 'var(--content-content-inverse-tertiary) !important'
+              ? 'var(--content-content-secondary)'
+              : 'var(--content-content-inverse-tertiary)'
             : variant === 'outline' || variant === 'plain'
-              ? 'var(--content-content-primary) !important'
-              : 'var(--content-content-inverse-primary) !important',
-          opacity: isDisabled ? '0.5 !important' : '1 !important',
+              ? 'var(--content-content-primary)'
+              : 'var(--content-content-inverse-primary)',
+          opacity: isDisabled ? 0.5 : 1,
           // state="hover"일 때만 인라인 스타일로 shadow 적용 (Storybook 표시용)
           ...(state === 'hover' && {
             boxShadow:
               variant === 'outline' || variant === 'plain'
-                ? 'inset 0 0 0 9999px var(--background-background-hover-overlay) !important'
-                : 'inset 0 0 0 9999px var(--background-background-inverse-hover-overlay) !important',
+                ? 'inset 0 0 0 9999px var(--background-background-hover-overlay)'
+                : 'inset 0 0 0 9999px var(--background-background-inverse-hover-overlay)',
           }),
         }}
         {...props}

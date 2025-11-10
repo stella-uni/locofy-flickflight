@@ -1,0 +1,58 @@
+/* Ant Design Button Reset CSS */
+/* Button 컴포넌트 전용 reset 스타일 */
+
+/* Button base styles - higher specificity */
+.ant-btn.ant-btn {
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0%;
+  transition: all 0.2s ease;
+}
+
+/* Button shadow reset - using higher specificity */
+.ant-btn.ant-btn:not(:disabled):active,
+.ant-btn.ant-btn:not(:disabled):focus,
+.ant-btn.ant-btn:not(:disabled):focus-visible {
+  box-shadow: none;
+}
+
+.ant-btn.ant-btn:disabled {
+  box-shadow: none;
+}
+
+/* Button text color inheritance - using higher specificity */
+.ant-btn.ant-btn:not(:disabled),
+.ant-btn.ant-btn:not(:disabled):hover,
+.ant-btn.ant-btn:not(:disabled):active,
+.ant-btn.ant-btn:not(:disabled):focus {
+  color: inherit;
+}
+
+/* Button border radius - will be overridden by inline styles if needed */
+.ant-btn.ant-btn {
+  border-radius: 8px;
+}
+
+/* Button size specific border radius - using higher specificity */
+.ant-btn.ant-btn-sm.ant-btn-sm {
+  border-radius: 6px;
+}
+
+/* Icon-only button padding - using higher specificity */
+.ant-btn[class*="icon-only"].ant-btn {
+  padding: 0;
+}
+
+/* Button primary variant - using higher specificity */
+.ant-btn-primary.ant-btn-primary:not(:disabled):active,
+.ant-btn-primary.ant-btn-primary:not(:disabled):focus,
+.ant-btn-primary.ant-btn-primary:not(:disabled):focus-visible {
+  box-shadow: none;
+}
+
+.ant-btn-primary.ant-btn-primary:not(:disabled),
+.ant-btn-primary.ant-btn-primary:not(:disabled):hover,
+.ant-btn-primary.ant-btn-primary:not(:disabled):active,
+.ant-btn-primary.ant-btn-primary:not(:disabled):focus {
+  color: inherit;
+}
+
