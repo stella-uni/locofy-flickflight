@@ -4,6 +4,9 @@ import PrimitivesColors from './PrimitivesColors';
 import SemanticColors from './SemanticColors';
 import Dimensions from './Dimensions';
 import Typography from './Typography';
+import Effects from './Effects';
+import Filters from './Filters';
+import Heroicons from './Heroicons';
 
 const meta = {
   title: 'Design Tokens',
@@ -48,6 +51,30 @@ export const TypographyShowcase: Story = {
   ),
 };
 
+export const EffectsShowcase: Story = {
+  render: () => (
+    <div className="p-8 bg-background-background-primary min-h-screen">
+      <Effects />
+    </div>
+  ),
+};
+
+export const FiltersShowcase: Story = {
+  render: () => (
+    <div className="p-8 bg-background-background-primary min-h-screen">
+      <Filters />
+    </div>
+  ),
+};
+
+export const HeroiconsShowcase: Story = {
+  render: () => (
+    <div className="p-8 bg-background-background-primary min-h-screen">
+      <Heroicons />
+    </div>
+  ),
+};
+
 export const AllTokens: Story = {
   render: () => (
     <div className="p-8 bg-background-background-primary min-h-screen space-y-12">
@@ -55,6 +82,9 @@ export const AllTokens: Story = {
       <SemanticColors />
       <Dimensions />
       <Typography />
+      <Effects />
+      <Filters />
+      <Heroicons />
     </div>
   ),
 };
