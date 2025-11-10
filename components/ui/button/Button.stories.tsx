@@ -162,17 +162,24 @@ export const DarkMode: Story = {
     return (
       <div
         data-theme="dark"
-        className="flex flex-col gap-12 p-8 bg-background-background-primary"
+        className="flex flex-col gap-12 p-8 bg-background-background-primary min-h-screen"
+        style={{ backgroundColor: '#18181b' }}
       >
         {variants.map(variant => (
           <div key={variant} className="flex flex-col gap-8">
-            <h3 className="text-lg font-semibold text-content-content-primary">
+            <h3 
+              className="text-lg font-semibold text-content-content-primary"
+              style={{ color: '#ffffff' }}
+            >
               {variant.charAt(0).toUpperCase() + variant.slice(1)} Variant (Dark
               Mode)
             </h3>
             {/* Header row with size labels */}
             <div className="flex gap-4 items-center">
-              <div className="w-32 text-sm font-medium text-content-content-secondary">
+              <div 
+                className="w-32 text-sm font-medium text-content-content-secondary"
+                style={{ color: '#a1a1aa' }}
+              >
                 State
               </div>
               <div className="flex gap-4">
@@ -180,6 +187,7 @@ export const DarkMode: Story = {
                   <div
                     key={size}
                     className="w-20 text-center text-sm font-medium text-content-content-secondary"
+                    style={{ color: '#a1a1aa' }}
                   >
                     {size.toUpperCase()}
                   </div>
@@ -190,7 +198,10 @@ export const DarkMode: Story = {
             {/* State rows */}
             {states.map(state => (
               <div key={state} className="flex gap-4 items-center">
-                <div className="w-32 text-sm text-content-content-secondary">
+                <div 
+                  className="w-32 text-sm text-content-content-secondary"
+                  style={{ color: '#a1a1aa' }}
+                >
                   {state.charAt(0).toUpperCase() + state.slice(1)}
                 </div>
                 <div className="flex gap-4">
@@ -313,17 +324,24 @@ export const IconOnlyDarkMode: Story = {
     return (
       <div
         data-theme="dark"
-        className="flex flex-col gap-12 p-8 bg-background-background-primary"
+        className="flex flex-col gap-12 p-8 bg-background-background-primary min-h-screen"
+        style={{ backgroundColor: '#18181b' }}
       >
         {variants.map(variant => (
           <div key={variant} className="flex flex-col gap-8">
-            <h3 className="text-lg font-semibold text-content-content-primary">
+            <h3 
+              className="text-lg font-semibold text-content-content-primary"
+              style={{ color: '#ffffff' }}
+            >
               {variant.charAt(0).toUpperCase() + variant.slice(1)} Variant (Icon
               Only, Dark Mode)
             </h3>
             {/* Header row with size labels */}
             <div className="flex gap-4 items-center">
-              <div className="w-32 text-sm font-medium text-content-content-secondary">
+              <div 
+                className="w-32 text-sm font-medium text-content-content-secondary"
+                style={{ color: '#a1a1aa' }}
+              >
                 State
               </div>
               <div className="flex gap-4">
@@ -331,6 +349,7 @@ export const IconOnlyDarkMode: Story = {
                   <div
                     key={size}
                     className="w-8 text-center text-sm font-medium text-content-content-secondary"
+                    style={{ color: '#a1a1aa' }}
                   >
                     {size.toUpperCase()}
                   </div>
@@ -341,7 +360,10 @@ export const IconOnlyDarkMode: Story = {
             {/* State rows */}
             {states.map(state => (
               <div key={state} className="flex gap-4 items-center">
-                <div className="w-32 text-sm text-content-content-secondary">
+                <div 
+                  className="w-32 text-sm text-content-content-secondary"
+                  style={{ color: '#a1a1aa' }}
+                >
                   {state.charAt(0).toUpperCase() + state.slice(1)}
                 </div>
                 <div className="flex gap-4">
