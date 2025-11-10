@@ -1,9 +1,11 @@
 # Button 컴포넌트 작업 문서
 
 ## 개요
+
 Figma 디자인을 기반으로 Button 컴포넌트를 구현했습니다. 텍스트 버튼과 아이콘 버튼을 하나의 컴포넌트로 통합하여 `iconOnly` prop으로 구분합니다.
 
 ## 파일 구조
+
 - `components/ui/button/Button.tsx`: 메인 Button 컴포넌트
 - `components/ui/button/Button.stories.tsx`: Storybook 스토리 파일
 - `app/tokens.css`: Light mode CSS 변수
@@ -12,20 +14,23 @@ Figma 디자인을 기반으로 Button 컴포넌트를 구현했습니다. 텍�
 ## 주요 기능
 
 ### 1. Props 인터페이스
+
 ```typescript
-export interface ButtonProps extends Omit<AntButtonProps, 'size' | 'type' | 'disabled' | 'variant'> {
-  size?: ButtonSize;           // 'xs' | 'sm' | 'base' | 'l' | 'xl'
-  state?: ButtonState;          // 'default' | 'hover' | 'focus' | 'disabled'
-  variant?: ButtonVariant;     // 'default' | 'outline' | 'plain'
+export interface ButtonProps
+  extends Omit<AntButtonProps, 'size' | 'type' | 'disabled' | 'variant'> {
+  size?: ButtonSize; // 'xs' | 'sm' | 'base' | 'l' | 'xl'
+  state?: ButtonState; // 'default' | 'hover' | 'focus' | 'disabled'
+  variant?: ButtonVariant; // 'default' | 'outline' | 'plain'
   disabled?: boolean;
-  iconOnly?: boolean;          // true: 아이콘 버튼, false: 텍스트 버튼
-  icon?: React.ReactNode;      // iconOnly=true일 때 사용
+  iconOnly?: boolean; // true: 아이콘 버튼, false: 텍스트 버튼
+  icon?: React.ReactNode; // iconOnly=true일 때 사용
 }
 ```
 
 ### 2. 사이즈 시스템
 
 #### 텍스트 버튼 (iconOnly=false)
+
 - **xs**: height 24px, fontSize 12px, lineHeight 16px, padding px-3 py-2
 - **sm**: height 28px, fontSize 14px, lineHeight 20px, padding px-3 py-2
 - **base**: height 32px, fontSize 14px, lineHeight 20px, padding px-4 py-3
@@ -33,6 +38,7 @@ export interface ButtonProps extends Omit<AntButtonProps, 'size' | 'type' | 'dis
 - **xl**: height 40px, fontSize 16px, lineHeight 24px, padding px-4 py-4
 
 #### 아이콘 버튼 (iconOnly=true)
+
 - **xs**: 24px × 24px, padding 0
 - **sm**: 28px × 28px, padding 0
 - **base**: 32px × 32px, padding 0
@@ -40,12 +46,14 @@ export interface ButtonProps extends Omit<AntButtonProps, 'size' | 'type' | 'dis
 - **xl**: 40px × 40px, padding 0
 
 #### Border Radius
+
 - **xs, sm**: 6px (`rounded-md`)
 - **base, l, xl**: 8px (`rounded-lg`)
 
 ### 3. Variant 시스템
 
 #### Default Variant
+
 - **Light Mode**:
   - Background: `--background-background-inverse-primary` (#18181b)
   - Border: `--border-border-inverse-primary` (#3f3f46)
@@ -61,6 +69,7 @@ export interface ButtonProps extends Omit<AntButtonProps, 'size' | 'type' | 'dis
   - Disabled: opacity 50%, 텍스트 `--content-content-inverse-tertiary`
 
 #### Outline Variant
+
 - **Light Mode**:
   - Background: `--background-background-primary` (#ffffff)
   - Border: `--border-border-primary` (#d4d4d8)
@@ -76,8 +85,9 @@ export interface ButtonProps extends Omit<AntButtonProps, 'size' | 'type' | 'dis
   - Disabled: opacity 50%, 텍스트 `--content-content-secondary`
 
 #### Plain Variant
+
 - **Light Mode**:
-  - Background: 
+  - Background:
     - iconOnly=true: `--background-background-primary` (#ffffff) (모든 상태)
     - iconOnly=false: transparent (default, disabled), `--background-background-primary` (hover, focus)
   - Border: none
@@ -86,7 +96,7 @@ export interface ButtonProps extends Omit<AntButtonProps, 'size' | 'type' | 'dis
   - Disabled: opacity 50%, 텍스트 `--content-content-secondary`
 
 - **Dark Mode**:
-  - Background: 
+  - Background:
     - iconOnly=true: `--background-background-primary` (#18181b) (모든 상태)
     - iconOnly=false: transparent (default, disabled), `--background-background-primary` (hover, focus)
   - Border: none
@@ -97,19 +107,23 @@ export interface ButtonProps extends Omit<AntButtonProps, 'size' | 'type' | 'dis
 ### 4. State 시스템
 
 #### Default State
+
 - 기본 스타일 적용
 - Hover 이벤트 시 overlay shadow 적용 (CSS 클래스로 처리)
 
 #### Hover State
+
 - `state="hover"` prop으로 고정 표시 (Storybook용)
 - Overlay shadow 인라인 스타일로 적용
 - 실제 hover 이벤트는 CSS 클래스로 처리
 
 #### Focus State
+
 - Default와 동일한 스타일
 - Focus ring 제거 (Ant Design 기본 스타일 오버라이드)
 
 #### Disabled State
+
 - Opacity 50%
 - Cursor: not-allowed
 - Variant에 따라 다른 텍스트 색상 적용
@@ -117,6 +131,7 @@ export interface ButtonProps extends Omit<AntButtonProps, 'size' | 'type' | 'dis
 ### 5. Hover Overlay Shadow 처리
 
 Hover 시 배경색 변화는 `inset box-shadow`를 사용하여 구현:
+
 - CSS 클래스: `hover:!shadow-[inset_0_0_0_9999px_var(--background-background-hover-overlay)]`
 - 인라인 스타일 (state="hover"일 때): `boxShadow: 'inset 0 0 0 9999px var(--background-background-hover-overlay) !important'`
 
@@ -125,6 +140,7 @@ Hover 시 배경색 변화는 `inset box-shadow`를 사용하여 구현:
 ### 6. Ant Design 스타일 오버라이드
 
 Ant Design의 기본 스타일을 피그마 디자인에 맞게 오버라이드하기 위해:
+
 - Tailwind 클래스에 `!important` 사용 (`!bg-*`, `!border-*`, `!text-*` 등)
 - 인라인 스타일에 `!important` 사용
 - Ant Design의 기본 shadow 제거: `!shadow-none`
@@ -135,12 +151,14 @@ Ant Design의 기본 스타일을 피그마 디자인에 맞게 오버라이드�
 ### 7. IconOnly vs Text Button 차이점
 
 #### IconOnly (iconOnly=true)
+
 - 고정 크기 (width × height)
 - Padding: 0
 - 아이콘 색상: `[&_.anticon]`, `[&_svg]` 선택자 사용
 - Plain variant: 배경 항상 primary (transparent 아님)
 
 #### Text Button (iconOnly=false)
+
 - 가변 크기 (텍스트에 따라)
 - Padding: 사이즈별로 다름
 - 텍스트 색상: `!text-*` 클래스 사용
@@ -151,6 +169,7 @@ Ant Design의 기본 스타일을 피그마 디자인에 맞게 오버라이드�
 모든 색상 값은 하드코딩하지 않고 CSS 변수(semantic tokens)를 사용:
 
 **Light Mode** (`tokens.css`):
+
 - `--background-background-primary`: #ffffff
 - `--background-background-inverse-primary`: #18181b
 - `--background-background-hover-overlay`: #00000008 (2.5% black overlay)
@@ -163,6 +182,7 @@ Ant Design의 기본 스타일을 피그마 디자인에 맞게 오버라이드�
 - `--content-content-inverse-tertiary`: #71717a
 
 **Dark Mode** (`tokens-dark.css`):
+
 - `--background-background-primary`: #18181b
 - `--background-background-inverse-primary`: #52525b
 - `--background-background-hover-overlay`: #ffffff0d (5% white overlay)
@@ -186,11 +206,13 @@ Ant Design의 기본 스타일을 피그마 디자인에 맞게 오버라이드�
 ## 핵심 로직
 
 ### getStateClasses 함수
+
 - variant, state, disabled, iconOnly에 따라 적절한 Tailwind 클래스 반환
 - iconOnly에 따라 아이콘 색상 선택자(`[&_.anticon]`, `[&_svg]`) 또는 텍스트 색상 클래스(`!text-*`) 적용
 - Plain variant의 배경색 처리 (iconOnly에 따라 다름)
 
 ### 인라인 스타일 처리
+
 - Ant Design 스타일 오버라이드를 위해 인라인 스타일에 `!important` 사용
 - iconOnly일 때: 고정 크기(width, height, minWidth, minHeight) 적용
 - state="hover"일 때: overlay shadow 인라인 스타일로 적용
@@ -218,11 +240,11 @@ Ant Design의 기본 스타일을 피그마 디자인에 맞게 오버라이드�
 </Button>
 
 // 아이콘 버튼
-<Button 
-  iconOnly={true} 
-  icon={<PlusIcon className="w-4 h-4" />} 
-  variant="default" 
-  size="base" 
+<Button
+  iconOnly={true}
+  icon={<PlusIcon className="w-4 h-4" />}
+  variant="default"
+  size="base"
   state="default"
 />
 
@@ -242,4 +264,3 @@ Ant Design의 기본 스타일을 피그마 디자인에 맞게 오버라이드�
 1. **디자인 우선**: 피그마 디자인이 Ant Design 기본 스타일보다 우선합니다.
 2. **Semantic Tokens**: 모든 색상 값은 CSS 변수로 관리합니다.
 3. **정확한 반영**: 피그마의 모든 상태, 사이즈, variant를 정확히 반영합니다.
-
