@@ -2,6 +2,7 @@
 import type { NextPage } from "next";
 import { useCallback } from "react";
 import { Button } from "antd";
+import Image from "next/image";
 import "/app/antd.css";
 
 export type TopHeaderType = {
