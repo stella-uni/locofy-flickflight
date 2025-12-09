@@ -1,3 +1,20 @@
+.custom-badge {
+  width: 52px;
+  height: 24px;
+  background-color: #27272a;
+  border-radius: 6px !important;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 6px;
+  padding-right: 6px;
+  color: #a1a1aa;
+  font-size: 12px;
+  line-height: 16px;
+  &:hover {
+    background-color: #27272a !important;
+    color: #a1a1aa !important;
+  }
+}
 .custom-hamburger-menu {
   width: 24px;
   height: 24px;

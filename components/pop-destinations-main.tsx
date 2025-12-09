@@ -15,39 +15,35 @@ const PopDestinationsMain: NextPage<PopDestinationsMainType> = ({
 }) => {
   const [col1Items] = useState([
     {
-      parisImage: "/ParisImage@2x.png",
       paris: "Paris",
       detailsWidth: "90.9px",
-      priceValue: "$699",
-      priceValueWidth: "90.9px",
+      priceValue1: "$699",
+      priceValueWidth1: "90.9px",
     },
     {
-      parisImage: "/GreeceImage@2x.png",
       paris: "Greece",
       detailsWidth: "99.9px",
-      priceValue: "$1079",
-      priceValueWidth: "99px",
+      priceValue1: "$1079",
+      priceValueWidth1: "99px",
     },
     {
-      parisImage: "/NorwayImage@2x.png",
       paris: "Norway",
       detailsWidth: "",
-      priceValue: "$895",
-      priceValueWidth: "",
+      priceValue1: "$895",
+      priceValueWidth1: "",
     },
     {
-      parisImage: "/TuscanyImage@2x.png",
       paris: "Tuscany",
       detailsWidth: "100.6px",
-      priceValue: "$1245",
-      priceValueWidth: "100.6px",
+      priceValue1: "$1245",
+      priceValueWidth1: "100.6px",
     },
   ]);
   return (
     <section
       className={`self-stretch flex flex-col items-start gap-6 text-left text-lg text-[#1262ae] font-[Roboto] ${className}`}
     >
-      <div className="self-stretch flex items-center [row-gap:20px] lg:flex-wrap">
+      <div className="self-stretch flex items-center [row-gap:20px] shrink-0 lg:flex-wrap">
         <div className="flex-1 flex flex-col items-start gap-1.5 min-w-[682px] mq1050:min-w-full">
           <b className="self-stretch relative tracking-[0.04em] uppercase">
             Plan your next trip
@@ -68,19 +64,18 @@ const PopDestinationsMain: NextPage<PopDestinationsMainType> = ({
           View all destinations
         </Button>
       </div>
-      <div className="self-stretch grid items-start grid-cols-[repeat(4,_minmax(240px,_1fr))] text-xl text-studio-darkmode-allwhite-ffffff lg:[grid-row-gap:20px] lg:justify-center lg:grid-cols-[repeat(2,_minmax(240px,_416px))] mq750:grid-cols-[minmax(240px,_1fr)]">
+      <div className="self-stretch grid items-start grid-cols-[repeat(4,_minmax(240px,_1fr))] shrink-0 text-xl text-background-backgroundprimary lg:[grid-row-gap:20px] lg:justify-center lg:grid-cols-[repeat(2,_minmax(240px,_416px))] mq750:grid-cols-[minmax(240px,_1fr)]">
         {col1Items.map((item, index) => (
           <Col1
             key={index}
-            parisImage={item.parisImage}
             paris={item.paris}
             detailsWidth={item.detailsWidth}
-            priceValue={item.priceValue}
-            priceValueWidth={item.priceValueWidth}
+            priceValue1={item.priceValue1}
+            priceValueWidth1={item.priceValueWidth1}
           />
         ))}
       </div>
-      <div className="w-[231.4px] rounded-[31px] bg-studio-darkmode-allwhite-ffffff hidden items-start gap-2.5 whitespace-nowrap text-right">
+      <div className="w-[231.4px] rounded-[31px] bg-background-backgroundprimary hidden items-start gap-2.5 whitespace-nowrap shrink-0 text-right">
         <div className="w-[197.3px] relative tracking-[0.04em] font-medium inline-block shrink-0">
           View all destinations
         </div>

@@ -1,17 +1,16 @@
+"use client";
 import type { NextPage } from "next";
 import Image from "next/image";
 
 export type FlightMainContainerType = {
   className?: string;
   sIN?: string;
-  duration: string;
   lAX?: string;
 };
 
 const FlightMainContainer: NextPage<FlightMainContainerType> = ({
   className = "",
   sIN,
-  duration,
   lAX,
 }) => {
   return (
@@ -30,7 +29,7 @@ const FlightMainContainer: NextPage<FlightMainContainerType> = ({
           height={24}
           sizes="100vw"
           alt=""
-          src={duration}
+          src="/Duration.svg"
         />
         <div className="h-7 w-[51.3px] flex items-start text-right">
           <h3 className="!m-0 h-7 w-[51.3px] relative text-[length:inherit] tracking-[0.04em] capitalize font-bold font-[inherit] inline-block shrink-0 mq450:text-[19px]">

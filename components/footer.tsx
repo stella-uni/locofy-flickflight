@@ -1,3 +1,4 @@
+"use client";
 import type { NextPage } from "next";
 import { Button } from "antd";
 import "/app/antd.css";
@@ -10,7 +11,7 @@ export type FooterType = {
 const Footer: NextPage<FooterType> = ({ className = "" }) => {
   return (
     <footer
-      className={`self-stretch [background:linear-gradient(91.74deg,_#0b5ba8_25.38%,_#299bd8)] flex items-start justify-center !pt-[33px] !pb-[33px] !pl-[84px] !pr-[83px] gap-11 text-left text-lg text-studio-darkmode-allwhite-ffffff font-[Roboto] lg:flex-wrap mq750:gap-[22px] mq750:!pl-[42px] mq750:!pr-[41px] mq750:box-border mq450:!pl-5 mq450:box-border ${className}`}
+      className={`self-stretch [background:linear-gradient(91.74deg,_#0b5ba8_25.38%,_#299bd8)] flex items-start justify-center !pt-[33px] !pb-[33px] !pl-[84px] !pr-[83px] gap-11 text-left text-lg text-background-backgroundprimary font-[Roboto] lg:flex-wrap mq750:gap-[22px] mq750:!pl-[42px] mq750:!pr-[41px] mq750:box-border mq450:!pl-5 mq450:box-border ${className}`}
     >
       <div className="flex-1 flex flex-col items-start gap-3.5 min-w-[385px] mq750:min-w-full">
         <Image
