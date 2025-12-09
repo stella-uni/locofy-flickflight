@@ -103,7 +103,7 @@ const HotelCard1: NextPage<HotelCard1Type> = ({
                 height={17.2}
                 sizes="100vw"
                 alt=""
-                src="/Vector.svg"
+                src="/Vector2.svg"
               />
               <div className="h-[19px] w-[25px] relative tracking-[0.04em] font-medium inline-block shrink-0">
                 {ratingSpace1}

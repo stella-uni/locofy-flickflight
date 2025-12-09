@@ -1,17 +1,6 @@
 /** @type {import('tailwindcss').Config} */
-// Import semantic tokens generated from Tokens Studio JSON
-let semanticTokens = {};
-try {
-  semanticTokens = require('./tokens/tailwind.tokens.js');
-} catch (e) {
-  // Fallback if tokens haven't been generated yet
-  console.warn(
-    'Semantic tokens not found. Run "npm run tokens:build" to generate them.'
-  );
-}
-
 module.exports = {
-  content: ['./app/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  content: ["./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
@@ -76,10 +65,10 @@ module.exports = {
         raw: "screen and (min-width: 421px) and (max-width: 450px)",
       },
       mq750: {
-        raw: 'screen and (min-width: 451px) and (max-width: 750px)',
+        raw: "screen and (min-width: 451px) and (max-width: 750px)",
       },
       mq1050: {
-        raw: 'screen and (min-width: 751px) and (max-width: 1050px)',
+        raw: "screen and (min-width: 751px) and (max-width: 1050px)",
       },
       lg: {
         raw: "screen and (min-width: 421px) and (max-width: 1200px)",
