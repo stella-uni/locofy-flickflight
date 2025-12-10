@@ -1,3 +1,4 @@
+"use client";
 import type { NextPage } from "next";
 import { Radio, Input, DatePicker, Button } from "antd";
 import "/app/antd.css";
@@ -10,7 +11,7 @@ export type SearchSectionType = {
 const SearchSection: NextPage<SearchSectionType> = ({ className = "" }) => {
   return (
     <div
-      className={`self-stretch h-[640px] [background:linear-gradient(78.78deg,_#114f8b_5.2%,_#2a9ad7)] flex items-start relative text-center text-[61px] text-studio-darkmode-allwhite-ffffff font-['Baloo_Bhai'] mq1050:h-auto ${className}`}
+      className={`self-stretch h-[640px] [background:linear-gradient(78.78deg,_#114f8b_5.2%,_#2a9ad7)] flex items-start relative isolate text-center text-[61px] text-background-backgroundprimary font-['Baloo_Bhai'] mq1050:h-auto ${className}`}
     >
       <div className="h-[639.9px] w-[1440px] relative [background:linear-gradient(78.78deg,_#114f8b_5.2%,_#2a9ad7)] hidden z-[0]" />
       <Image
@@ -28,7 +29,7 @@ const SearchSection: NextPage<SearchSectionType> = ({ className = "" }) => {
             Find the best destinations and the most popular stays!
           </h3>
         </div>
-        <section className="w-[1160px] rounded-[10px] bg-studio-darkmode-allwhite-ffffff flex flex-col items-start !p-5 box-border gap-1 text-left text-xl text-[#303030] font-[Roboto]">
+        <section className="w-[1160px] rounded-[10px] bg-background-backgroundprimary flex flex-col items-start !p-5 box-border gap-1 text-left text-xl text-[#303030] font-[Roboto]">
           <div className="self-stretch overflow-hidden flex items-center !p-[5px] gap-[5px] mq1050:flex-wrap">
             <h3 className="!m-0 flex-1 relative text-[length:inherit] tracking-[0.04em] uppercase font-bold font-[inherit] inline-block min-w-[137px] mq450:text-base">
               Search flights
@@ -38,7 +39,7 @@ const SearchSection: NextPage<SearchSectionType> = ({ className = "" }) => {
                 <div className="overflow-hidden flex items-center">
                   <Radio
                     className="h-[38px] w-[38px] custom-padding"
-                    defaultChecked={true}
+                    defaultChecked="true"
                   />
                   <div className="relative tracking-[0.15px] leading-[150%]">
                     Return

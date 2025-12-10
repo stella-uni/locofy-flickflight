@@ -1,20 +1,19 @@
+"use client";
 import type { NextPage } from "next";
 import Image from "next/image";
 
 export type RecCard1Type = {
   className?: string;
-  unsplash5MV818tzxeo: string;
   bali?: string;
   d3N?: string;
-  discountValue?: string;
+  discountValue1?: string;
 };
 
 const RecCard1: NextPage<RecCard1Type> = ({
   className = "",
-  unsplash5MV818tzxeo,
   bali,
   d3N,
-  discountValue,
+  discountValue1,
 }) => {
   return (
     <div
@@ -27,10 +26,10 @@ const RecCard1: NextPage<RecCard1Type> = ({
         height={242}
         sizes="100vw"
         alt=""
-        src={unsplash5MV818tzxeo}
+        src="/unsplash-5MV818tzxeo@2x.png"
       />
-      <div className="self-stretch rounded-t-none rounded-b-[10px] bg-studio-darkmode-allwhite-ffffff border-[#eaeaea] border-solid border-[1px] flex flex-col items-center justify-center !pt-[18px] !pb-[18px] !pl-[15px] !pr-[15px]">
-        <div className="self-stretch flex items-center [row-gap:20px] mq450:flex-wrap">
+      <div className="self-stretch rounded-t-none rounded-b-[10px] bg-background-backgroundprimary border-[#eaeaea] border-solid border-[1px] flex flex-col items-center justify-center !pt-[18px] !pb-[18px] !pl-[15px] !pr-[15px]">
+        <div className="w-full flex items-center max-w-full [row-gap:20px] mq450:flex-wrap">
           <div className="flex-1 flex flex-col items-start gap-[3px] min-w-[120px]">
             <h3 className="!m-0 self-stretch relative text-[length:inherit] tracking-[0.02em] font-medium font-[inherit] mq450:text-base">
               {bali}
@@ -40,7 +39,7 @@ const RecCard1: NextPage<RecCard1Type> = ({
             </div>
           </div>
           <h2 className="!m-0 relative text-[32px] leading-[34px] font-normal font-['Baloo_Bhai'] text-[#1262af] text-right mq1050:text-[26px] mq1050:leading-[27px] mq450:text-[19px] mq450:leading-5">
-            {discountValue}
+            {discountValue1}
           </h2>
         </div>
       </div>

@@ -1,3 +1,4 @@
+"use client";
 import type { NextPage } from "next";
 import TopHeader from "../components/top-header";
 import SearchSection from "../components/search-section";
@@ -10,7 +11,7 @@ import Footer from "../components/footer";
 
 const Homepage: NextPage = () => {
   return (
-    <div className="w-full relative bg-studio-darkmode-allwhite-ffffff flex flex-col items-center gap-[69px] leading-[normal] tracking-[normal] hover:[background:linear-gradient(#fff,_#fff),_#87550a] mq750:gap-[34px] mq450:gap-[17px]">
+    <div className="w-full relative bg-background-backgroundprimary flex flex-col items-center gap-[69px] leading-[normal] tracking-[normal] hover:[background:linear-gradient(#fff,_#fff),_#87550a] mq750:gap-[34px] mq450:gap-[17px]">
       <section className="self-stretch flex flex-col items-center">
         <TopHeader />
         <SearchSection />

@@ -1,3 +1,4 @@
+"use client";
 import type { NextPage } from "next";
 import { Button } from "antd";
 import "/app/antd.css";
@@ -16,13 +17,13 @@ const UpcomingFlightSection: NextPage<UpcomingFlightSectionType> = ({
       className={`self-stretch flex flex-col items-start text-left text-lg text-[#303030] font-[Roboto] ${className}`}
     >
       <div className="self-stretch flex flex-col items-start gap-5">
-        <b className="self-stretch relative tracking-[0.04em] uppercase">
+        <h2 className="!m-0 self-stretch relative text-[length:inherit] tracking-[0.04em] uppercase font-bold font-[inherit]">
           Recent Searches
-        </b>
+        </h2>
         <div className="self-stretch flex flex-col items-start justify-center gap-9 text-2xl text-[#1262ae] mq750:gap-[18px]">
           <div className="self-stretch flex items-center justify-center flex-wrap content-center gap-[15px]">
-            <FlightMainContainer sIN="SIN" duration="/Duration.svg" lAX="LAX" />
-            <FlightMainContainer sIN="MY" duration="/Duration.svg" lAX="DUB" />
+            <FlightMainContainer sIN="SIN" lAX="LAX" />
+            <FlightMainContainer sIN="MY" lAX="DUB" />
           </div>
           <div className="self-stretch flex flex-col items-start justify-center gap-5 text-lg text-[#cecece]">
             <div className="self-stretch relative tracking-[0.04em] uppercase">
@@ -43,9 +44,9 @@ const UpcomingFlightSection: NextPage<UpcomingFlightSectionType> = ({
               </div>
               <div className="flex flex-col items-center justify-center gap-2">
                 <div className="w-[65.4px] h-[65.4px] rounded-2xl bg-[#ff9b53] flex items-start !pt-[17px] !pb-[17.1px] !pl-4 !pr-4 box-border">
-                  <div className="h-[65.4px] w-[65.4px] relative rounded-2xl bg-[#ff9b53] hidden" />
+                  <div className="h-[65.4px] w-[65.4px] relative rounded-2xl bg-[#ff9b53] hidden shrink-0" />
                   <Button
-                    className="h-[31.3px] w-[31.6px] relative z-[1] custom-ticket"
+                    className="h-[31.3px] w-[31.6px] relative z-[1] shrink-0 custom-ticket"
                     size="small"
                     style={{ width: "31.6px" }}
                     type="primary"
