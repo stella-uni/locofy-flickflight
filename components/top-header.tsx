@@ -2,7 +2,6 @@
 import type { NextPage } from "next";
 import { useCallback } from "react";
 import { Button } from "antd";
-import Image from "next/image";
 import "/app/antd.css";
 
 export type TopHeaderType = {
@@ -23,13 +22,7 @@ const TopHeader: NextPage<TopHeaderType> = ({ className = "" }) => {
       className={`self-stretch h-[77px] bg-background-backgroundprimary flex items-center justify-center !pt-[22px] !pb-[22px] !pl-20 !pr-20 box-border top-[0] z-[99] sticky mq750:!pl-10 mq750:!pr-10 mq750:box-border ${className}`}
     >
       <div className="flex-1 flex items-center justify-between gap-5 max-w-full shrink-0">
-        <Image 
-          src="/Logo.svg" 
-          alt="Logo" 
-          width={174} 
-          height={33} 
-          className="h-[33px] w-[174px] relative overflow-hidden shrink-0" 
-        />
+        <Image className="h-[33px] w-[174px] relative overflow-hidden shrink-0" />
         <div className="flex items-center justify-end gap-9 mq450:gap-[18px]">
           <nav className="!m-0 flex items-center justify-end gap-[29.7px] text-left text-sm text-[#424242] font-[Roboto] mq750:hidden">
             <div className="relative text-[#1262af]">Explore</div>

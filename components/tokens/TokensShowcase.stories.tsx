@@ -75,17 +75,22 @@ export const HeroiconsShowcase: Story = {
   ),
 };
 
-export const AllTokens: Story = {
-  render: () => (
-    <div className="p-8 bg-background-background-primary min-h-screen space-y-12">
-      <PrimitivesColors />
-      <SemanticColors />
-      <Dimensions />
-      <Typography />
-      <Effects />
-      <Filters />
-      <Heroicons />
-    </div>
-  ),
-};
+// AllTokens story removed due to Chromatic size limit (exceeds 25,000,000px)
+// Use individual token stories (Primitives, Semantic, DimensionsShowcase, etc.) instead
+// export const AllTokens: Story = {
+//   parameters: {
+//     layout: 'fullscreen',
+//   },
+//   render: () => (
+//     <div className="p-8 bg-background-background-primary min-h-screen space-y-12 max-w-[1920px] mx-auto">
+//       <PrimitivesColors />
+//       <SemanticColors />
+//       <Dimensions />
+//       <Typography />
+//       <Effects />
+//       <Filters />
+//       <Heroicons />
+//     </div>
+//   ),
+// };
 
