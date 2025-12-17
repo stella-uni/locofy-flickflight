@@ -8,6 +8,7 @@ export type ButtonVariant = 'default' | 'outline' | 'plain';
 
 export interface ButtonProps
   extends Omit<AntButtonProps, 'size' | 'type' | 'disabled' | 'variant'> {
+  className?: string;
   size?: ButtonSize;
   state?: ButtonState;
   variant?: ButtonVariant;

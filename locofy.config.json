@@ -1,0 +1,14 @@
+{
+  "components": [
+    "./components/rec-card1.tsx",
+    "./components/hotel-card1.tsx",
+    "./components/col1.tsx",
+    "./components/badge.tsx",
+    "./components/ui/button/Button.tsx",
+    "./components/ui/select/Select.tsx",
+    "./components/ui/input/Input.tsx"
+  ],
+  "publicPath": "./public",
+  "projectId": "355YMuv9ajomizqYMjCdeAXsHxZ",
+  "projectName": "IVTS Designsystem"
+}

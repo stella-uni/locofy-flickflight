@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import type { NextPage } from "next";
 
 export type BadgeType = {
@@ -97,7 +98,7 @@ const Badge: NextPage<BadgeType> = ({
 
   return (
     <div
-      className={`rounded-global-borderradius-rounded-md bg-border-bordersecondary flex items-center justify-center !pt-global-spacing-1 !pb-global-spacing-1 !pl-global-spacing-15 !pr-global-spacing-15 text-center text-xs text-[#71717a] font-[Inter] ${getBadgeContainerStyle(
+      className={`min-w-[60px] rounded-global-borderradius-rounded-md bg-border-bordersecondary flex items-center justify-center !pt-global-spacing-1 !pb-global-spacing-1 !pl-global-spacing-15 !pr-global-spacing-15 text-center text-xs text-[#71717a] font-[Inter] ${getBadgeContainerStyle(
         variantKey
       )} ${className}`}
     >
